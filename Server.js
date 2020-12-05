@@ -16,13 +16,13 @@ mongoose.connect(
     }
 );
 
-// with mongodb lib
+
 const mongodb = require('mongodb');
 
 const MongoClient = mongodb.MongoClient;
 
 let _db;
-// you can replace test with any database name that you want
+
 const mongoConnect = (cb) => {
   MongoClient.connect('mongodb://127.0.0.1:27017/movies')
     .then((client) => {
@@ -33,7 +33,7 @@ const mongoConnect = (cb) => {
       console.log(err);
     });
 }
-//after your server started you can use getDb to access mongo Database
+
 const getDb = () => {
   if (_db) return _db;
   throw 'No database found';
